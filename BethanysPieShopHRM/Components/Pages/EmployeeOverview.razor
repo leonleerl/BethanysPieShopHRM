@@ -1,7 +1,16 @@
 @page "/employeeoverview"
+@attribute [StreamRendering(true)]
 
 <h1>Employee Overview</h1>
 
+@if (Employees == null || Employees.Count == 0)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
 <table class="table table-light">
     <thead class="table-primary">
     <tr>
@@ -13,16 +22,17 @@
     </tr>
     </thead>
     <tbody>
-        @foreach (var employee in Employees)
-        {
-            <tr>
-                <td>
-                    <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{employee.EmployeeId}.jpg")" class="img-fluid rounded-circle employee-detail-img" />
-                </td>
-                <td>@employee.EmployeeId</td>
-                <td>@employee.FirstName</td>
-                <td>@employee.LastName</td>
-            </tr>
-        }
+    @foreach (var employee in Employees)
+    {
+        <tr>
+            <td>
+                <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{employee.EmployeeId}.jpg")" class="img-fluid rounded-circle employee-detail-img"/>
+            </td>
+            <td>@employee.EmployeeId</td>
+            <td>@employee.FirstName</td>
+            <td>@employee.LastName</td>
+        </tr>
+    }
     </tbody>
 </table>
+}
