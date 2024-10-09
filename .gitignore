@@ -2,3 +2,5 @@
 /BethanysPieShopHRM/bin
 /BethanysPieShopHRM/obj
 .DS_Store
+BethanysPieShopHRM.Shared/bin
+BethanysPieShopHRM.Shared/obj
