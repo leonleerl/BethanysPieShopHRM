@@ -6,6 +6,11 @@ namespace BethanysPieShopHRM.Components.Pages;
 
 public partial class EmployeeDetail : ComponentBase
 {
+
+    private void ChangeHolidayState()
+    {
+        Employee.IsOnHoliday = !Employee.IsOnHoliday;
+    }
     
     [Parameter]
     public int EmployeeId { get; set; }
