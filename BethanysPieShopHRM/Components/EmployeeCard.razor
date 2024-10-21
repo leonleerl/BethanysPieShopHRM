@@ -9,7 +9,7 @@
                 <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")" class="img-fluid rounded-circle employee-detail-img" />
                 
             </div>
-            <a class="btn btn-primary" href="@($"employeedetail/{Employee.EmployeeId}")">Full details</a>
+            <a class="btn btn-info" href="@($"employeedetail/{Employee.EmployeeId}")">Full details</a>
             <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await EmployeeQuickViewClicked.InvokeAsync(Employee))">
                 Quick View
             </button>
