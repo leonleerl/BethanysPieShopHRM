@@ -10,5 +10,6 @@ namespace BethanysPieShopHRM.Components.Widgets
         {
             EmployeeCounter = MockDataService.Employees.Count;
         }
+        
     }
 }
