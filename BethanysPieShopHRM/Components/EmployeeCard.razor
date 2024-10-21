@@ -1,3 +1,4 @@
+@rendermode InteractiveServer
 <div class="col">
     <div class="card rounded-3 employee-card">
         <div class="card-header py-3">
@@ -9,7 +10,10 @@
                 
             </div>
             <a class="btn btn-primary" href="@($"employeedetail/{Employee.EmployeeId}")">Full details</a>
-        </div>
+            <button class="btn btn-primary btn-sm mb-1" @onclick="@(async () => await EmployeeQuickViewClicked.InvokeAsync(Employee))">
+                Quick View
+            </button>
+            </div>
     </div>
 </div>
 
