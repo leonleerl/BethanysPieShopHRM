@@ -4,6 +4,7 @@ using BethanysPieShopHRM.Contracts.Services;
 using BethanysPieShopHRM.Data;
 using BethanysPieShopHRM.Repositories;
 using BethanysPieShopHRM.Services;
+using BethanysPieShopHRM.State;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeDataService, EmployeeDataService>();
+builder.Services.AddScoped<ApplicationState>();
 
 var app = builder.Build();
 
