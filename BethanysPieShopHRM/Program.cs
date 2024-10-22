@@ -17,7 +17,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<ITimeRegistrationRepository, TimeRegistrationRepository>();
+
 builder.Services.AddScoped<IEmployeeDataService, EmployeeDataService>();
+builder.Services.AddScoped<ITimeRegistrationService, TimeRegistrationService>();
+
 builder.Services.AddScoped<ApplicationState>();
 
 var app = builder.Build();
