@@ -1,5 +1,9 @@
 using BethanysPieShopHRM.Components;
+using BethanysPieShopHRM.Contracts.Repositories;
+using BethanysPieShopHRM.Contracts.Services;
 using BethanysPieShopHRM.Data;
+using BethanysPieShopHRM.Repositories;
+using BethanysPieShopHRM.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +14,9 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeDataService, EmployeeDataService>();
 
 var app = builder.Build();
 
